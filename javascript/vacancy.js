@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         state = 1;
         let foundMatch = false;
 
-        fetch('vacancy.json')
+        fetch('./json/vacancy.json')
           .then((response) => response.json())
           .then((data) => {
             let cardNumber = 1;

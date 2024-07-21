@@ -99,42 +99,92 @@ document.addEventListener('DOMContentLoaded', function () {
                         continue;
                       }
 
-                      const [label, value] = item[i];
+                      let label, value;
 
-                      let labelElement = document.createElement('span');
-                      labelElement.classList.add('label');
-                      labelElement.textContent = label;
-                      labelElement.setAttribute('lang', 'ru');
+                      if (i === 5) {
+                        label = `${item[5][0]} & ${item[6][0]}`;
+                        value = `${item[6][1]} ${item[6][1]}`;
 
-                      let valueElement;
-                      if (i === 17) {
-                        valueElement = document.createElement('a');
-                        valueElement.classList.add('portfolioIcon');
-                        valueElement.href = value;
-                        valueElement.target = '_blank'; // Open link in a new tab
-                      } else if (i === 5) {
-                        valueElement = document.createElement('a');
-                        valueElement.classList.add('phoneIcon');
-                        valueElement.href = `tel:${value}`;
-                        valueElement.target = '_blank'; // Open link in a new tab
-                      } else if (i === 6) {
-                        valueElement = document.createElement('a');
-                        valueElement.classList.add('emailIcon');
-                        valueElement.href = `mailto:${value}`;
-                        valueElement.target = '_blank'; // Open link in a new tab
-                      } else {
-                        valueElement = document.createElement('div');
+                        let labelElement = document.createElement('span');
+                        labelElement.classList.add('label');
+                        labelElement.setAttribute('lang', 'ru');
+                        labelElement.textContent = 'ОТКЛИКНУТЬСЯ';
+
+                        let valueElement = document.createElement('div');
                         valueElement.classList.add('value');
-                        valueElement.textContent = value;
+
+                        let phoneLink = document.createElement('a');
+                        phoneLink.classList.add('phoneIcon');
+                        phoneLink.href = `tel:${item[5][1]}`;
+                        phoneLink.target = '_blank';
+
+                        let emailLink = document.createElement('a');
+                        emailLink.classList.add('emailIcon');
+                        emailLink.href = `mailto:${item[6][1]}`;
+                        emailLink.target = '_blank';
+
+                        valueElement.appendChild(phoneLink);
+                        valueElement.appendChild(document.createTextNode(' '));
+                        valueElement.appendChild(emailLink);
+
+                        let br = document.createElement('br');
+
+                        fullInfo.appendChild(labelElement);
+                        fullInfo.appendChild(valueElement);
+                        fullInfo.appendChild(br);
+                        popup.appendChild(fullInfo);
+
+                        i++;
+                      } else {
+                        [label, value] = item[i];
+
+                        let labelElement = document.createElement('span');
+                        labelElement.classList.add('label');
+                        labelElement.setAttribute('lang', 'ru');
+                        labelElement.textContent = label;
+
+                        let valueElement;
+                        if (i === 17) {
+                          valueElement = document.createElement('a');
+                          valueElement.classList.add('portfolioIcon');
+                          valueElement.href = value;
+                          valueElement.target = '_blank';
+                        } else {
+                          valueElement = document.createElement('div');
+                          valueElement.classList.add('value');
+                          valueElement.textContent = value;
+                        }
+
+                        let br = document.createElement('br');
+
+                        fullInfo.appendChild(labelElement);
+                        fullInfo.appendChild(valueElement);
+                        fullInfo.appendChild(br);
+                        popup.appendChild(fullInfo);
                       }
-
-                      let br = document.createElement('br');
-
-                      fullInfo.appendChild(labelElement);
-                      fullInfo.appendChild(valueElement);
-                      fullInfo.appendChild(br);
-                      popup.appendChild(fullInfo);
                     }
+                    let showMoreButton = document.createElement('div');
+                    showMoreButton.classList.add('showMoreButton');
+                    showMoreButton.addEventListener('click', () => {
+                      let labels = fullInfo.querySelectorAll('.label');
+                      let values = fullInfo.querySelectorAll('.value');
+                      let brs = fullInfo.querySelectorAll('br');
+                      labels.forEach((label) => {
+                        label.style.display = 'inline-block';
+                        label.style.transition = 'all 1s';
+                      });
+                      brs.forEach((br) => {
+                        br.style.display = 'block';
+                        br.style.transition = 'all 1s';
+                      });
+                      values.forEach((value) => {
+                        value.style.display = 'inline-block';
+                        value.style.transition = 'all 1s';
+                      });
+                      showMoreButton.style.display = 'none';
+                    });
+                    fullInfo.appendChild(showMoreButton);
+                    popup.appendChild(fullInfo);
                   });
                   cardNumber++;
                 }

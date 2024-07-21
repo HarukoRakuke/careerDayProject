@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
               }
 
               if ((state = 1)) {
-                let specificationLabel = item[4][1]; // Assuming the third label is at index 2
+                let specificationLabel = item[4][1];
                 if (specificationLabel === specification) {
                   foundMatch = true;
                   let card = document.createElement('div');
@@ -96,42 +96,94 @@ document.addEventListener('DOMContentLoaded', function () {
                       if (i === 3) {
                         continue;
                       }
-                      const [label, value] = item[i];
 
-                      let labelElement = document.createElement('span');
-                      labelElement.classList.add('label');
-                      labelElement.setAttribute('lang', 'ru');
-                      labelElement.textContent = label;
+                      let label, value;
 
-                      let valueElement;
-                      if (i === 10) {
-                        valueElement = document.createElement('a');
-                        valueElement.classList.add('urlIcon');
-                        valueElement.href = value;
-                        valueElement.target = '_blank'; // Open link in a new tab
-                      } else if (i === 12) {
-                        valueElement = document.createElement('a');
-                        valueElement.classList.add('phoneIcon');
-                        valueElement.href = `tel:${value}`;
-                        valueElement.target = '_blank'; // Open link in a new tab
-                      } else if (i === 13) {
-                        valueElement = document.createElement('a');
-                        valueElement.classList.add('emailIcon');
-                        valueElement.href = `mailto:${value}`;
-                        valueElement.target = '_blank'; // Open link in a new tab
-                      } else {
-                        valueElement = document.createElement('div');
+                      if (i === 12) {
+                        label = `${item[12][0]} & ${item[13][0]}`;
+                        value = `${item[12][1]} ${item[13][1]}`;
+
+                        let labelElement = document.createElement('span');
+                        labelElement.classList.add('label');
+                        labelElement.setAttribute('lang', 'ru');
+                        labelElement.textContent = 'ОТКЛИКНУТЬСЯ';
+
+                        let valueElement = document.createElement('div');
                         valueElement.classList.add('value');
-                        valueElement.textContent = value;
+
+                        let phoneLink = document.createElement('a');
+                        phoneLink.classList.add('phoneIcon');
+                        phoneLink.href = `tel:${item[12][1]}`;
+                        phoneLink.target = '_blank';
+
+                        let emailLink = document.createElement('a');
+                        emailLink.classList.add('emailIcon');
+                        emailLink.href = `mailto:${item[13][1]}`;
+                        emailLink.target = '_blank';
+
+                        valueElement.appendChild(phoneLink);
+                        valueElement.appendChild(document.createTextNode(' ')); // Add a separator
+                        valueElement.appendChild(emailLink);
+
+                        let br = document.createElement('br');
+
+                        fullInfo.appendChild(labelElement);
+                        fullInfo.appendChild(valueElement);
+                        fullInfo.appendChild(br);
+                        popup.appendChild(fullInfo);
+
+                        // Skip index 13 since it's already handled
+                        i++;
+                      } else {
+                        [label, value] = item[i];
+
+                        let labelElement = document.createElement('span');
+                        labelElement.classList.add('label');
+                        labelElement.setAttribute('lang', 'ru');
+                        labelElement.textContent = label;
+
+                        let valueElement;
+                        if (i === 10) {
+                          valueElement = document.createElement('a');
+                          valueElement.classList.add('urlIcon');
+                          valueElement.href = value;
+                          valueElement.target = '_blank'; // Open link in a new tab
+                        } else {
+                          valueElement = document.createElement('div');
+                          valueElement.classList.add('value');
+                          valueElement.textContent = value;
+                        }
+
+                        let br = document.createElement('br');
+
+                        fullInfo.appendChild(labelElement);
+                        fullInfo.appendChild(valueElement);
+                        fullInfo.appendChild(br);
+                        popup.appendChild(fullInfo);
                       }
-
-                      let br = document.createElement('br');
-
-                      fullInfo.appendChild(labelElement);
-                      fullInfo.appendChild(valueElement);
-                      fullInfo.appendChild(br);
-                      popup.appendChild(fullInfo);
                     }
+                    let showMoreButton = document.createElement('div');
+                    showMoreButton.classList.add('showMoreButton');
+                    showMoreButton.addEventListener('click', () => {
+                      let labels = fullInfo.querySelectorAll('.label');
+                      let values = fullInfo.querySelectorAll('.value');
+                      let brs = fullInfo.querySelectorAll('br');
+                      labels.forEach((label) => {
+                        label.style.display = 'inline-block';
+                        label.style.transition = 'all 1s';
+                      });
+                      brs.forEach((br) => {
+                        br.style.display = 'block';
+                        br.style.transition = 'all 1s';
+                      });
+                      values.forEach((value) => {
+                        value.style.display = 'inline-block';
+                        value.style.transition = 'all 1s';
+                      });
+                      showMoreButton.style.display = 'none';
+                    });
+                    fullInfo.appendChild(showMoreButton);
+                    popup.appendChild(fullInfo);
                   });
                   cardNumber++;
                 }

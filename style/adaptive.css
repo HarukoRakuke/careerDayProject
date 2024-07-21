@@ -1,4 +1,12 @@
-@media all and (min-width: 1440px) and (max-width: 1799px) {
+@media all and (min-width: 769px) and (max-width: 1799px) {
+  .showMoreButton {
+    bottom: 3vw;
+    right: 3vw;
+    height: 3.5vw;
+    background-size: 50%;
+    background-position: top left;
+  }
+
   body {
     padding: 8vw 8vw;
   }
@@ -64,7 +72,12 @@
   }
 }
 
-@media all and (min-width: 413px) and (max-width: 1339px) {
+@media all and (min-width: 413px) and (max-width: 768px) {
+  .showMoreButton {
+    bottom: 3vw;
+    right: 3vw;
+  }
+
   body {
     padding: 10vw 6vw;
     background-size: 200% auto;
@@ -134,6 +147,12 @@
   .number {
     font-size: 3vw;
     top: 4vw;
+    right: 4vw;
+  }
+  .showMoreButton {
+    right: 4vw;
+    bottom: 4vw;
+    height: 6vw;
   }
   .menu-card-title {
     margin-top: 25%;
@@ -169,6 +188,15 @@
 }
 
 @media all and (max-width: 412px) {
+  .showMoreButton {
+    background-size: 100%;
+    bottom: 6vw;
+    right: 4vw;
+    height: 12vw;
+    width: 10%;
+    background-position: right;
+  }
+
   .portfolioIcon,
   .emailIcon,
   .urlIcon {
@@ -176,6 +204,7 @@
   }
   .phoneIcon {
     width: 11vw;
+    margin-right: 10vw;
   }
 
   .label {

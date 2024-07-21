@@ -279,14 +279,15 @@ nav > p {
   color: #ff922d;
   position: absolute;
   top: 2vw;
-  right: 3vw;
+  right: 2vw;
 
   width: 7%;
 }
 .portfolioIcon,
 .phoneIcon,
 .emailIcon,
-.urlIcon {
+.urlIcon,
+.showMoreButton {
   width: 3.5vw;
   display: inline-block;
   aspect-ratio: 1;
@@ -299,14 +300,20 @@ nav > p {
 .portfolioIcon:hover,
 .phoneIcon:hover,
 .emailIcon:hover,
-.urlIcon:hover {
+.urlIcon:hover,
+.showMoreButton:hover {
   transition: all 1s;
   rotate: 10deg;
   scale: 1.07;
 }
-
+.label,
+.value,
+br {
+  transition: all 1s;
+}
 .phoneIcon {
   width: 2.6vw;
+  margin-right: 3vw;
   background-image: url('../img/phoneIcon.svg');
 }
 .urlIcon {
@@ -323,10 +330,58 @@ nav > p {
   margin-top: 2vw;
 }
 
+.showMoreButton {
+  position: absolute;
+  bottom: 2vw;
+  background-image: url(../img/addMore.svg);
+  width: 7%;
+  background-size: 60%;
+  background-position: top left;
+  height: 3.5vw;
+  right: 2vw;
+  background-position: left;
+  z-index: 10;
+}
+
 .urlIcon + br + .label {
   margin-top: 2vw;
 }
 
-.vacancy-body > .cards-container > .card > .value:last-of-type {
-  margin-bottom: 2vw;
+.vacancy-body > .cards-container > .card > .value:nth-of-type(11) {
+  margin-bottom: 0vw;
+}
+
+.cv-body > .cards-container > .card > .label:first-of-type,
+.cv-body > .cards-container > .card > .label:first-of-type + .value,
+.cv-body > .cards-container > .card > .label:nth-of-type(2),
+.cv-body > .cards-container > .card > .label:nth-of-type(2) + .value,
+.cv-body > .cards-container > .card > .label:nth-of-type(5),
+.cv-body > .cards-container > .card > .label:nth-of-type(5) + .value,
+.cv-body > .cards-container > .card > .label:nth-of-type(9),
+.cv-body > .cards-container > .card > .label:nth-of-type(9) + .value,
+.cv-body > .cards-container > .card > .label:nth-of-type(12),
+.cv-body > .cards-container > .card > .label:nth-of-type(12) + .value,
+.cv-body > .cards-container > .card > .label:nth-of-type(13),
+.cv-body > .cards-container > .card > .label:nth-of-type(13) + .value,
+.vacancy-body > .cards-container > .card > .label:nth-of-type(2),
+.vacancy-body > .cards-container > .card > .label:nth-of-type(2) + .value,
+.vacancy-body > .cards-container > .card > .label:nth-of-type(3),
+.vacancy-body > .cards-container > .card > .label:nth-of-type(3) + .value,
+.vacancy-body > .cards-container > .card > .label:nth-of-type(4),
+.vacancy-body > .cards-container > .card > .label:nth-of-type(4) + .value,
+.vacancy-body > .cards-container > .card > .label:nth-of-type(9),
+.vacancy-body > .cards-container > .card > .label:nth-of-type(9) + .value,
+.vacancy-body > .cards-container > .card > .label:nth-of-type(7),
+.vacancy-body > .cards-container > .card > .label:nth-of-type(7) + .value,
+.cv-body > .cards-container > .card > br:first-of-type,
+.cv-body > .cards-container > .card > br:nth-of-type(2),
+.cv-body > .cards-container > .card > br:nth-of-type(5),
+.cv-body > .cards-container > .card > br:nth-of-type(9),
+.cv-body > .cards-container > .card > br:nth-of-type(12),
+.cv-body > .cards-container > .card > br:nth-of-type(13),
+.vacancy-body > .cards-container > .card > br:nth-of-type(2),
+.vacancy-body > .cards-container > .card > br:nth-of-type(3),
+.vacancy-body > .cards-container > .card > br:nth-of-type(4),
+.vacancy-body > .cards-container > .card > br:nth-of-type(6) {
+  display: none;
 }

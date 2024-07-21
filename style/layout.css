@@ -43,7 +43,7 @@ a {
   display: inline-block;
   margin-bottom: 2vw;
 }
-.value:last-of-type {
+.vacancy-body > .cards-container > .card > .value:last-of-type {
   margin-bottom: 0;
 }
 body {
@@ -311,6 +311,7 @@ nav > p {
 }
 .urlIcon {
   width: 3vw;
+  aspect-ratio: 1.6;
   background-image: url('../img/urlIcon.svg');
 }
 .emailIcon {
@@ -319,6 +320,10 @@ nav > p {
 }
 .phoneIcon + br + .label,
 .emailIcon + br + .label {
+  margin-top: 2vw;
+}
+
+.urlIcon + br + .label {
   margin-top: 2vw;
 }
 

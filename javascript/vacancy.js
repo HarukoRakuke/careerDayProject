@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.body.querySelector(
                       '.title-box > .header'
                     ).innerHTML = 'вакансия';
-                    if (window.innerWidth < 412) {
+                    if (window.innerWidth < 769) {
                       document.body.querySelector(
                         '.title-box > .header'
                       ).style.marginTop = '10vw';

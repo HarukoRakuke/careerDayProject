@@ -1,0 +1,106 @@
+@media all and (max-width: 412px) {
+  .cards-container,
+  .menu-card,
+  .title-box,
+  .div-container {
+    border-radius: 6vw;
+  }
+  body {
+    padding: 10vw 6vw;
+    background-size: 300%;
+  }
+  .menu-card {
+    width: 100%;
+  }
+
+  .cv-body > .title-box > .header {
+    margin-top: 12vw;
+  }
+
+  .header {
+    font-size: 8vw;
+  }
+  .title-box > p {
+    font-size: 3vw;
+    width: 100%;
+  }
+  .title-box {
+    padding: 6vw 6vw;
+    border-radius: 8vw;
+    margin-bottom: 8vw;
+  }
+  .menu-card-title {
+    font-size: 8vw;
+  }
+  nav {
+    height: 9vw;
+    top: 6vw;
+    right: 6vw;
+  }
+  nav > p {
+    margin-left: 3vw;
+    font-size: 2vw;
+    line-height: 2vw;
+    margin-top: 1.5vw;
+  }
+  .vacancy-body > .title-box > nav > p,
+  .cv-body > .title-box > nav > p {
+    left: -18vw;
+    line-height: 2.5vw;
+  }
+  .vac-cv-card-orientation {
+    width: 100%;
+    padding: 4vw;
+    border-radius: 5vw;
+    margin-bottom: 4vw;
+    animation: popup3 8s ease-in-out forwards;
+  }
+
+  .vac-cv-card-orientation > h1 {
+    font-size: 6vw;
+  }
+  .vac-cv-card-orientation > p {
+    font-size: 4vw;
+  }
+  .vacancy-card {
+    font-size: 3vw;
+    padding: 6vw 4vw;
+    padding-bottom: 0;
+    position: relative;
+  }
+  .companyName {
+    font-size: 6vw;
+    line-height: 5vw;
+    width: 100%;
+    display: block;
+  }
+  .workPlace {
+    font-size: 3vw;
+  }
+  .number {
+    position: absolute;
+    top: 4vw;
+    right: 6vw;
+    font-size: 6vw;
+    text-align: right;
+  }
+  .vacancy-card:last-of-type {
+    padding-bottom: 6vw;
+  }
+  .label {
+    font-size: 6vw;
+    line-height: 6vw;
+    hyphens: auto;
+  }
+  .value {
+    font-size: 4vw;
+    margin-bottom: 8vw;
+    hyphens: auto;
+  }
+  .card {
+    padding: 6vw 4vw;
+  }
+  .label:first-of-type {
+    margin-top: 8vw;
+  }
+}

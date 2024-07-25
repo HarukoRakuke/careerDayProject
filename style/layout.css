@@ -237,6 +237,7 @@ h1 {
   font-size: 1.3vw;
   text-align: center;
   color: #67788b;
+  -webkit-text-size-adjust: 100%;
 }
 
 .vac-cv-card-orientation,

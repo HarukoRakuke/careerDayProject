@@ -232,7 +232,7 @@ nav > p {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.vac-cv-card-orientation > h1 {
+h1 {
   font-family: 'DRUK';
   font-size: 1.3vw;
   text-align: center;

@@ -5,10 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function openScrollPopup() {
     let buttons = document.querySelectorAll('.vac-cv-card-orientation');
     buttons.forEach((button) => {
-      let buttonP = button.querySelector('p').innerHTML;
       let buttonH1 = button.querySelector('h1').innerHTML;
-      buttonP = buttonP.toUpperCase();
-      let specification = buttonH1 + ' ' + buttonP;
+      let specification = buttonH1;
       button.addEventListener('click', () => {
         buttons.forEach((b) => {
           b.remove();

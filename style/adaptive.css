@@ -36,10 +36,7 @@
     font-size: 3vw;
   }
   .vac-cv-card-orientation > h1 {
-    font-size: 2.8vw;
-  }
-  .vac-cv-card-orientation > p {
-    font-size: 1.6vw;
+    font-size: 1.8vw;
   }
   .vac-cv-card-orientation {
     padding: 3vw;
@@ -90,6 +87,7 @@
     font-size: 7vw;
   }
   .title-box > p {
+    line-height: 3vw;
     font-size: 2.5vw;
     width: 80%;
   }
@@ -114,10 +112,7 @@
     left: -15vw;
   }
   .vac-cv-card-orientation > h1 {
-    font-size: 3vw;
-  }
-  .vac-cv-card-orientation > p {
-    font-size: 1.8vw;
+    font-size: 2vw;
   }
 
   .vac-cv-card-orientation {
@@ -250,6 +245,7 @@
     font-size: 8.5vw;
   }
   .title-box > p {
+    line-height: 3.5vw;
     font-size: 3vw;
     width: 100%;
   }
@@ -286,7 +282,7 @@
   }
 
   .vac-cv-card-orientation > h1 {
-    font-size: 6vw;
+    font-size: 4vw;
   }
   .vac-cv-card-orientation > p {
     font-size: 4vw;

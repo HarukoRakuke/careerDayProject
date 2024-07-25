@@ -75,6 +75,16 @@ nav {
 .cv-body > .title-box > nav {
   animation: scale 1s forwards ease-in-out;
 }
+.vacancy-body > .title-box > nav > .logo,
+.cv-body > .title-box > nav > .logo {
+  background-image: url('../img/house.svg');
+  right: 15%;
+}
+
+.logo {
+  background-repeat: no-repeat;
+  background-position: left;
+}
 .vacancy-body > .title-box > nav > p,
 .cv-body > .title-box > nav > p {
   position: absolute;
@@ -207,27 +217,25 @@ nav > p {
 
 .vac-cv-card-orientation {
   width: 45%;
-  margin: 0 auto;
   display: inline-block;
   padding: 2vw;
   background-color: white;
   margin-bottom: 2vw;
   animation: popup2 8s ease-in-out forwards;
   border-radius: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.vac-cv-card-orientation:nth-of-type(odd) {
-  float: right;
+.cards-container-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .vac-cv-card-orientation > h1 {
   font-family: 'DRUK';
-  font-size: 2vw;
+  font-size: 1.3vw;
   text-align: center;
-  color: #67788b;
-}
-.vac-cv-card-orientation > p {
-  text-align: center;
-  font-family: 'RS';
-  font-size: 1.2vw;
   color: #67788b;
 }
 

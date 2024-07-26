@@ -225,19 +225,17 @@ nav > p {
   border-radius: 2vw;
   display: flex;
   align-items: center;
+  font-family: 'DRUK';
+  font-size: 1.3vw;
+  text-align: center;
+  color: #67788b;
+  -webkit-text-size-adjust: 100%;
   justify-content: center;
 }
 .cards-container-main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-h1 {
-  font-family: 'DRUK';
-  font-size: 1.3vw;
-  text-align: center;
-  color: #67788b;
-  -webkit-text-size-adjust: 100%;
 }
 
 .vac-cv-card-orientation,

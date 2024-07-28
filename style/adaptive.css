@@ -79,6 +79,9 @@
     background-size: 200% auto;
   }
   .menu-card {
+    margin-bottom: 5vw;
+  }
+  .menu-card {
     width: 100%;
     aspect-ratio: 2.5;
   }
@@ -205,6 +208,10 @@
 
   .vacancy-body > .cards-container > .card > .value:last-of-type {
     margin-bottom: 5vw;
+  }
+
+  .menu-card {
+    margin-bottom: 8vw;
   }
 
   .urlIcon + br + .label,
